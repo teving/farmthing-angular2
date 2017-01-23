@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/teving/farmthing-angular2/issues"
   },
-  "homepage": "https://github.com/teving/farmthing-angular2#readme"
+  "homepage": "https://github.com/teving/farmthing-angular2#readme",
+  "dependencies": {
+    "@angular/common": "^2.4.4",
+    "@angular/compiler": "^2.4.4",
+    "@angular/core": "^2.4.4",
+    "@angular/forms": "^2.4.4",
+    "@angular/http": "^2.4.4",
+    "@angular/platform-browser": "^2.4.4",
+    "@angular/platform-browser-dynamic": "^2.4.4",
+    "@angular/router": "^3.4.4",
+    "rxjs": "^5.0.3",
+    "zone.js": "^0.7.6"
+  }
 }
