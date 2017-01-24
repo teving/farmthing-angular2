@@ -31,6 +31,6 @@ module.exports = {
       new ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
         helpers.root('src')
-      )
+     )
    ]
 };

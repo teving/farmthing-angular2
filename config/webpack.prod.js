@@ -3,6 +3,7 @@ const commonConfig = require('./webpack.common.js');
 const helpers = require('./helpers');
 
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NoEmitOnErrorsPlugin = require('webpack/lib/NoEmitOnErrorsPlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
@@ -16,13 +17,26 @@ module.exports = webpackMerge(commonConfig, {
       filename: '[name].[hash].js',
       chunkFilename: '[id].[hash].chunk.js'
    },
+   module: {
+      rules: [
+         {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+               fallbackLoader: 'style-loader',
+               loader: 'css-loader'
+            }),
+            include: [helpers.root('src', 'styles')]
+         }
+      ]
+   },
    plugins: [
-      new NoEmitOnErrorsPlugin(),
-      new UglifyJsPlugin(),
       new DefinePlugin({
          'process.env': {
             'ENV': JSON.stringify(ENV)
          }
-      })
+      }),
+      new ExtractTextPlugin('[name].[contenthash].css'),
+      new NoEmitOnErrorsPlugin(),
+      new UglifyJsPlugin()
    ]
 });

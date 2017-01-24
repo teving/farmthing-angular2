@@ -10,6 +10,15 @@ module.exports = webpackMerge(commonConfig, {
       filename: '[name].js',
       chunkFilename: '[id].chunk.js'
    },
+   module: {
+      rules: [
+         {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader'],
+            include: [helpers.root('src', 'styles')]
+         }
+      ]
+   },
    devServer: {
       historyApiFallback: true,
       stats: 'minimal'
