@@ -18,11 +18,7 @@ module.exports = webpackMerge(commonConfig, {
    },
    plugins: [
       new NoEmitOnErrorsPlugin(),
-      new UglifyJsPlugin({
-         mangle: {
-            keep_fnames: true
-         }
-      }),
+      new UglifyJsPlugin(),
       new DefinePlugin({
          'process.env': {
             'ENV': JSON.stringify(ENV)
