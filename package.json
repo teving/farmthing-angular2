@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.dev.js --inline --progress --port 3000",
-    "build": "webpack --config ./config/webpack.prod.js"
+    "build": "npm run build:dev",
+    "build:dev": "npm run clean:dist && webpack --config ./config/webpack.dev.js --progress --profile",
+    "build:prod": "npm run clean:dist && webpack --config ./config/webpack.prod.js --progress --profile --bail",
+    "clean": "npm run clean:dist",
+    "clean:dist": "rimraf dist",
+    "lint": "tslint \"src\\**\\*.ts\"",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --config ./config/webpack.dev.js --content-base src/ --progress --profile --watch --port 3000 --inline --hot",
+    "server:prod": "http-server dist -c-1 --cors",
+    "start": "npm run server:dev"
   },
   "repository": {
     "type": "git",
@@ -37,6 +45,8 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "html-webpack-plugin": "^2.26.0",
+    "http-server": "^0.9.0",
+    "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "ts-helpers": "^1.1.2",
     "tslint": "^4.3.1",
