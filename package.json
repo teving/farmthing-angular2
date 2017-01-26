@@ -11,7 +11,7 @@
     "clean:dist": "rimraf dist",
     "lint": "tslint \"src\\**\\*.ts\"",
     "server": "npm run server:dev",
-    "server:dev": "webpack-dev-server --config ./config/webpack.dev.js --content-base src/ --progress --profile --watch --port 3000 --inline --hot",
+    "server:dev": "webpack-dev-server --config ./config/webpack.dev.js --content-base src/ --progress --profile --watch --inline --hot",
     "server:prod": "http-server dist -c-1 --cors",
     "start": "npm run server:dev"
   },
