@@ -2,6 +2,6 @@
    "extends": "tslint:recommended",
    "rules": {
       "quotemark": "single",
-      "trailing-comma": "never"
+      "trailing-comma": [true, {"multiline": "never", "singleline": "never"}]
    }
 }
