@@ -23,7 +23,12 @@ module.exports = {
             test: /\.css$/,
             use: ['to-string-loader', 'css-loader'],
             exclude: [helpers.root('src', 'styles')]
-        }
+         },
+         {
+            test: /\.html$/,
+            use: 'raw-loader',
+            exclude: [helpers.root('src/index.html')]
+         }
       ]
    },
    plugins: [

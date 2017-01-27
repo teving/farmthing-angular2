@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
    selector: 'urm-app',
-   template: '<h1>Uproot Market</h1>',
+   templateUrl: './app.component.html',
    styleUrls: ['./app.component.css']
 })
 export class AppComponent {}
