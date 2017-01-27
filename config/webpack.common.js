@@ -18,7 +18,12 @@ module.exports = {
          {
             test: /\.ts$/,
             use: ['awesome-typescript-loader', 'angular2-template-loader']
-         }
+         },
+         {
+            test: /\.css$/,
+            use: ['to-string-loader', 'css-loader'],
+            exclude: [helpers.root('src', 'styles')]
+        }
       ]
    },
    plugins: [
