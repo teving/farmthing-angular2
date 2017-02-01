@@ -7,12 +7,20 @@ module.exports = function(config){
       files: [
          { pattern: './config/spec-bundle.js', watched: false }
       ],
-      preprocessors: { './config/spec-bundle.js': ['webpack', 'sourcemap']},
+      preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap']},
       webpack: webpackConfig,
       webpackMiddleware: {
          noInfo: true
       },
-      reporters: ['mocha'],
+      reporters: ['mocha', 'coverage', 'remap-coverage'],
+      coverageReporter: {
+         type: 'in-memory'
+      },
+      remapCoverageReporter: {
+         'text-summary': null,
+         json: './coverage/coverage.json',
+         html: './coverage/html'
+      },
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,

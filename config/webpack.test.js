@@ -32,6 +32,16 @@ module.exports = {
          {
             test: /\.html$/,
             loader: 'raw-loader'
+         },
+         {
+            enforce: 'post',
+            test: /\.(js|ts)$/,
+            loader: 'istanbul-instrumenter-loader',
+            include: helpers.root('src'),
+            exclude: [
+               /\.spec\.ts$/,
+               /node_modules/
+            ]
          }
       ]
    },
