@@ -5,7 +5,8 @@ module.exports = function(config){
       basePath: '',
       frameworks: ['mocha', 'chai'],
       files: [
-         { pattern: './config/spec-bundle.js', watched: false }
+         { pattern: './config/spec-bundle.js', watched: false },
+         { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
       ],
       preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap']},
       webpack: webpackConfig,

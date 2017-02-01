@@ -1,5 +1,7 @@
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlElementsPlugin = require('./html-elements-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const helpers = require('./helpers');
@@ -39,8 +41,14 @@ module.exports = {
          template: 'src/index.html'
       }),
       new ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
-        helpers.root('src')
-     )
+         /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+         helpers.root('src')
+      ),
+      new CopyWebpackPlugin([
+         { from: 'src/assets', to: 'assets' }
+      ]),
+      new HtmlElementsPlugin({
+         headTags: require('./head-config.common')
+      })
    ]
 };
