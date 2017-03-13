@@ -1,22 +1,21 @@
+import {IProduce} from './produce.model';
 import {IAmount} from './amount.model';
+import {IPricePerUnit} from './price-per-unit.model';
 
 export interface IAvailableProduce {
-   type: String;
-   description: String;
+   produce: IProduce;
    amountAvailable: IAmount;
    minimumOrderSize: IAmount;
-   price: Number;
+   price: IPricePerUnit;
 }
 
 export function availableProduce(
-                     type: String,
-                     description: String,
+                     produce: IProduce,
                      amountAvailable: IAmount,
                      minimumOrderSize: IAmount,
-                     price: Number): IAvailableProduce {
+                     price: IPricePerUnit): IAvailableProduce {
    return {
-      type,
-      description,
+      produce,
       amountAvailable,
       minimumOrderSize,
       price
