@@ -67,6 +67,7 @@
     "phantomjs-prebuilt": "^2.1.14",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.1",
+    "source-map-loader": "^0.2.0",
     "style-loader": "^0.13.2",
     "to-string-loader": "^1.1.5",
     "ts-helpers": "^1.1.2",
