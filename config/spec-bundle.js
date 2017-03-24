@@ -11,8 +11,6 @@ require('zone.js/dist/mocha-patch');
 require('zone.js/dist/async-test');
 require('zone.js/dist/fake-async-test');
 
-require('ts-helpers');
-
 const testing = require('@angular/core/testing');
 const browser = require('@angular/platform-browser-dynamic/testing');
 

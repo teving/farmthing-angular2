@@ -41,7 +41,7 @@ module.exports = {
          template: 'src/index.html'
       }),
       new ContextReplacementPlugin(
-         /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+         /angular(\\|\/)core(\\|\/)@angular/,
          helpers.root('src')
       ),
       new CopyWebpackPlugin([

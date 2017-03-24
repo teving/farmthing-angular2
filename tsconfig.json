@@ -9,6 +9,7 @@
       "noImplicitAny": true,
       "noEmit": true,
       "noEmitHelpers": true,
+      "importHelpers": true,
       "lib": ["es2015", "dom"],
       "types": [
          "chai",
