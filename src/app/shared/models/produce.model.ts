@@ -1,9 +1,9 @@
 export interface IProduce {
-   type: String;
-   description: String;
+   type: string;
+   description: string;
 }
 
-export function produce(type: String, description: String): IProduce {
+export function produce(type: string, description: string): IProduce {
    return {
       type,
       description

@@ -1,9 +1,9 @@
 export interface ILocation {
-   latitude: Number;
-   longitude: Number;
+   latitude: number;
+   longitude: number;
 }
 
-export function location(latitude: Number, longitude: Number): ILocation {
+export function location(latitude: number, longitude: number): ILocation {
    return {
       latitude,
       longitude

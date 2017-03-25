@@ -1,9 +1,9 @@
 export interface IAmount {
-   amount: Number;
-   unit: String;
+   amount: number;
+   unit: string;
 }
 
-export function amount(amount: Number, unit: String): IAmount {
+export function amount(amount: number, unit: string): IAmount {
    return {
       amount,
       unit

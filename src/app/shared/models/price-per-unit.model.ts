@@ -1,10 +1,10 @@
 export interface IPricePerUnit {
-   amount: Number;
-   currency: String;
-   unit: String;
+   amount: number;
+   currency: string;
+   unit: string;
 }
 
-export function pricePerUnit(amount: Number, currency: String, unit: String): IPricePerUnit {
+export function pricePerUnit(amount: number, currency: string, unit: string): IPricePerUnit {
    return {
       amount,
       currency,
