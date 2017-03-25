@@ -6,7 +6,7 @@ describe('amount.model', () => {
       it('should create an IAmount from the arguments', () => {
          const result = amount(1, 'kg');
          const expected = {amount: 1, unit: 'kg'};
-         
+
          assert.deepEqual(result, expected);
       });
    });
