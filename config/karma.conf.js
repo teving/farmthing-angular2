@@ -6,6 +6,7 @@ module.exports = function(config){
       frameworks: ['mocha', 'chai'],
       files: [
          { pattern: './config/spec-bundle.js', watched: false },
+         { pattern: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBeY0snjiW8-Yu-sc4nhb4nc3D-aek1-vQ&libraries=places', watched: false },
          { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
       ],
       preprocessors: { './config/spec-bundle.js': ['coverage', 'webpack', 'sourcemap']},
