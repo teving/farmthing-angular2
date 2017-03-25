@@ -47,7 +47,7 @@ module.exports = {
    },
    plugins: [
       new ContextReplacementPlugin(
-         /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+         /angular(\\|\/)core(\\|\/)@angular/,
          helpers.root('src')
       )
    ]
