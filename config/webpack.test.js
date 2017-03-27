@@ -30,6 +30,10 @@ module.exports = {
             loader: ['to-string-loader', 'css-loader']
          },
          {
+            test: /\.scss$/,
+            loader: ['raw-loader', 'sass-loader']
+         },
+         {
             test: /\.html$/,
             loader: 'raw-loader'
          },

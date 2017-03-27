@@ -8,6 +8,7 @@ const NoEmitOnErrorsPlugin = require('webpack/lib/NoEmitOnErrorsPlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const stylesDirectory = helpers.root('src', 'styles');
 
 module.exports = webpackMerge(commonConfig, {
    devtool: 'source-map',
@@ -25,7 +26,15 @@ module.exports = webpackMerge(commonConfig, {
                fallbackLoader: 'style-loader',
                loader: 'css-loader'
             }),
-            include: [helpers.root('src', 'styles')]
+            include: [stylesDirectory]
+         },
+         {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+               fallback: 'style-loader',
+               use: 'css-loader!sass-loader'
+            }),
+            include: [stylesDirectory]
          }
       ]
    },

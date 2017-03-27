@@ -2,6 +2,8 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const helpers = require('./helpers');
 
+const stylesDirectory = helpers.root('src', 'styles');
+
 module.exports = webpackMerge(commonConfig, {
    devtool: 'inline-source-map',
    output: {
@@ -25,7 +27,12 @@ module.exports = webpackMerge(commonConfig, {
          {
             test: /\.css$/,
             use: ['style-loader', 'css-loader'],
-            include: [helpers.root('src', 'styles')]
+            include: [stylesDirectory]
+         },
+         {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+            include: [stylesDirectory]
          }
       ]
    },

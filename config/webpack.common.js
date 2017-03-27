@@ -5,6 +5,7 @@ const HtmlElementsPlugin = require('./html-elements-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const helpers = require('./helpers');
+const stylesDirectory = helpers.root('src', 'styles');
 
 module.exports = {
    entry: {
@@ -24,7 +25,12 @@ module.exports = {
          {
             test: /\.css$/,
             use: ['to-string-loader', 'css-loader'],
-            exclude: [helpers.root('src', 'styles')]
+            exclude: [stylesDirectory]
+         },
+         {
+          test: /\.scss$/,
+          use: ['to-string-loader', 'css-loader', 'sass-loader'],
+          exclude: [stylesDirectory]
          },
          {
             test: /\.html$/,
