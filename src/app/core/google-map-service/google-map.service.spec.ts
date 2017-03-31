@@ -1,10 +1,11 @@
 import { assert } from 'chai';
 import { GoogleMapService } from './google-map.service';
+import { GlobalRef } from '../global.provider';
+import { GoogleMapApiWrapper } from './google-map-api.wrapper';
 
 describe('google-map-service', () => {
    function createService() {
-      const doc = new DOMParser().parseFromString('<html><body></body></html>', 'text/html');
-      return new GoogleMapService(doc);
+      return new GoogleMapService(new GlobalRef(), new GoogleMapApiWrapper());
    }
 
    describe('getMap', () => {
